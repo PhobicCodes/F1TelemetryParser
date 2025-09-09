@@ -1,9 +1,10 @@
 # Basic F1 telemetry parser
 
-import csv
 from pathlib import Path 
+from data_loader import load_lap_times
 
 data_file = Path(__file__).parent.parent / "data" / "sample_laps.csv"
+lap_times = load_lap_times(data_file)
 
 lap_times = []
 with open(data_file, newline = "") as csvfile:
